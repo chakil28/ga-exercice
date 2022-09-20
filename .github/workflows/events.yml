@@ -15,3 +15,9 @@ jobs:
       - name: Print the current time
         run: |
           echo $(date)
+
+      - name: Create and publish 3 branches, "dev", "staging", "feat/feature-1"
+        run : |
+          git switch -c dev && git push --set-upstream origin dev
+          git switch -c staging && git push --set-upstream origin staging
+          git switch -c feat/feature-1 && git push --set-upstream origin feat/feature-1
